@@ -29,6 +29,7 @@ async function loadByBreed(breed) {
     }
 }
 
+//test
 //renders a random dog from array based on what breed the user selects
 function createDogPic(images) {
     document.getElementById("dogPic").innerHTML=`
