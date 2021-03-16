@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="assets/css/dogAPI.css">
 </head>
 <body>
-    <div class="app">
+  <!--app container-->
+  <div class="app">
+      <!--header-->
         <div class="header">
             <h1>Destressor App</h1>
-            <div id="breed"></div>
         </div>
-        <div class="dogPicArea" id="dogPic">
-    </div>  
-    </div>
+        <!--dog API divs-->
+        <div id="breed"></div>
+        <div class="dogPicArea" id="dogPic"></div>  
+  </div>
+    
+    <!--youtube API inputs-->
     <div class="container">
         <h1>Find a Video</h1>
         <form>
@@ -26,12 +30,14 @@
               <input type="submit" value="Search">        
           </div>
         </form>
+        <!--youtube API video containers-->
         <div>
           <div>
             <div id="videos"></div>
           </div>
         </div>
-      </div>
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/dogAPI.js"></script>
