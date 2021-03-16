@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destressor App</title>
-    <link rel="stylesheet" href="dogAPI.css">
+    <link rel="stylesheet" href="assets/css/dogAPI.css">
 </head>
 <body>
     <div class="app">
@@ -14,11 +14,27 @@
             <div id="breed"></div>
         </div>
         <div class="dogPicArea" id="dogPic">
-
-        </div>  
+    </div>  
     </div>
+    <div class="container">
+        <h1>Find a Video</h1>
+        <form>
+          <div>
+            <input type="text" id="search">
+          </div>
+          <div>
+              <input type="submit" value="Search">        
+          </div>
+        </form>
+        <div>
+          <div>
+            <div id="videos"></div>
+          </div>
+        </div>
+      </div>
 
-
-    <script src="dogAPI.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/js/dogAPI.js"></script>
+    <script src="assets/js/youtubeAPI.js"></script>
 </body>
 </html>
