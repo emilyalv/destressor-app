@@ -29,8 +29,9 @@ async function loadByBreed(breed) {
     }
 }
 
+//Generates random dog picture of the breed the user selects
 function createDogPic(images) {
     document.getElementById("dogPic").innerHTML=`
-    <div class="dogPicImg" style="background-image: url('${images[0]}')"></div>
+    <div class="dogPicImg" style="background-image: url('${images[Math.floor(Math.random() * images.length)]}')"></div>
     `
 }
