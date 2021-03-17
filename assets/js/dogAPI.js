@@ -1,3 +1,5 @@
+var saveDogBtn = document.getElementById("dogSaveBtn");
+
 //fetches breed list
 async function start() {
     const response = await fetch("https://dog.ceo/api/breeds/list/all");
@@ -25,14 +27,22 @@ async function loadByBreed(breed) {
         const response = await fetch(`https://dog.ceo/api/breed/${breed}/images`)
         const data = await response.json()
         createDogPic(data.message)
-        //got message from console
     }
 }
 
-//test
 //renders a random dog from array based on what breed the user selects
+//generates button to save dog
 function createDogPic(images) {
+    saveDogBtn.classList.remove("hidden");
+    var getDogPic = images[Math.floor(Math.random() * images.length)]
     document.getElementById("dogPic").innerHTML=`
-    <div class="dogPicImg" style="background-image: url('${images[Math.floor(Math.random() * images.length)]}')"></div>
-    `
+    <div class="dogPicImg" style="background-image: url('${getDogPic}')"></div>
+    `    
+}
+
+saveDogBtn.addEventListener("click", dogFav);
+
+function dogFav(getDogPic) {
+    console.log(getDogPic)
+    localStorage.setItem("favoriteDogs", JSON.stringify(getDogPic));
 }

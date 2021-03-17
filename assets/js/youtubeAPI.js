@@ -1,3 +1,5 @@
+var saveVidBtn = document.getElementById("vidSaveBtn");
+
 $(document).ready(function(){
 
     var search = $('#search').val; 
@@ -9,6 +11,7 @@ $(document).ready(function(){
 
 
     function videoSearch() {
+        saveVidBtn.classList.remove("hidden");
         $("#videos").empty();
         let search = $('#search').val();
         $.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyA-A85JoLyq11NziNGjOlWcwOJ-1wxSf8o&type=video&part=snippet&maxResults=4&q="+search,function(data){
