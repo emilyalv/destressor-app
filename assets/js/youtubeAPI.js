@@ -1,19 +1,17 @@
-var saveVidBtn = document.getElementById("vidSaveBtn");
-
 $(document).ready(function(){
-
-    var search = $('#search').val; 
+    var saveVidBtn = $('#vidSaveBtn');
 
     $("form").submit(function(event){
         event.preventDefault();
-        videoSearch();
+        let search = $('#topics option:selected').text();
+        console.log(search)
+        videoSearch(search);
     })
 
-
-    function videoSearch() {
-        saveVidBtn.classList.remove("hidden");
+    function videoSearch(search) {
+        saveVidBtn.show()
         $("#videos").empty();
-        let search = $('#search').val();
+        
         $.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyA-A85JoLyq11NziNGjOlWcwOJ-1wxSf8o&type=video&part=snippet&maxResults=4&q="+search,function(data){
             console.log(data)
             console.log(search)
