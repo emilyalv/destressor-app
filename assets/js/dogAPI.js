@@ -29,20 +29,21 @@ async function loadByBreed(breed) {
         createDogPic(data.message)
     }
 }
-
+var currentPic = "";
 //renders a random dog from array based on what breed the user selects
 //generates button to save dog
 function createDogPic(images) {
     saveDogBtn.classList.remove("hidden");
     var getDogPic = images[Math.floor(Math.random() * images.length)]
     document.getElementById("dogPic").innerHTML=`
-    <div class="dogPicImg" style="background-image: url('${getDogPic}')"></div>
-    `    
+    <img class="dogPicImg" src=${getDogPic}></img>
+    `
+    console.log(getDogPic); 
+    currentPic = getDogPic;   
 }
 
 saveDogBtn.addEventListener("click", dogFav);
 
-function dogFav(getDogPic) {
-    console.log(getDogPic)
-    localStorage.setItem("favoriteDogs", JSON.stringify(getDogPic));
+function dogFav(e) {
+    localStorage.setItem("favoriteDogs", JSON.stringify(currentPic));
 }
