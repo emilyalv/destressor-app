@@ -9,23 +9,36 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <div id="menu-bar">
+      <div id="menu" onclick="onClickMenu()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+      </div>
+      <ul class="nav" id="nav">
+            <li><a href="#dogSection">Dogs</a></li>
+            <li><a href="#videoSection">Watch</a></li>
+            <li><a href="#favoritesSection">Favorites</a></li>
+      </ul>
+    </div>
+    <div class="menu-bg" id="menu-bg"></div>
   <header>
-    <h1>unwind.</h1>
+    <h1>Unwind.</h1>
   </header>
   <main>
     <section id="dogSection">
-      <h2>dogs.</h2>    
-      <!--dog API divs-->
-      <label for="topics">Find your favorite breed in the dropdown:</label>
+      <h2>The Pups.</h2>    
+      <!--dog API divss -->
+      <label for="topics">Select your favorite breed in the dropdown to view images.</label>
       <div id="breed"></div>
         <button id="dogSaveBtn" class="hidden">Save Dog to Favorites</button>
       <div class="dogPicArea" id="dogPic"></div>     
     </section>
     <section id="videoSection">
-      <h2>watch.</h2>
+      <h2>Watch.</h2>
        <!--video API menu-->
        <form>
-        <label for="topics">Choose a topic & click Search. To move on to the next one, click Search again.</label><br/>
+        <label for="topics">Choose a topic you would like to see & click Search. To move on to the next one, click Search again.</label><br/>
         <select name="topics" id="topics">
           <option value="meditation">Meditation</option>
           <option value="guided-breathing">Guided Breathing</option>
@@ -45,7 +58,7 @@
   </div>
     </section>
     <section id="favoritesSection">
-      <h2>my favorites.</h2>
+      <h2>My Favorites.</h2>
       <button id="clearFavesBtn">Clear Favorites</button>
         <div id="dogFaves"></div>
         <div id="videoFaves"></iframe></div>
@@ -54,11 +67,12 @@
     </section>
   </main>
   <footer>
-    <h4>unwind.<br> destressor app</h4>
+    <h4>Unwind.<br> Destressor app.</h4>
   </footer>       
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/dogAPI.js"></script>
+    <script src="assets/js/hamburger.js"></script>
     <script src="assets/js/youtubeAPI.js"></script>
 </body>
 </html>
