@@ -1,5 +1,8 @@
 h1, h2, option, label {
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    
 }
 
 h4 {
@@ -13,7 +16,7 @@ label {
 header {
     text-align: center;
     width: 100%; 
-    background-color: lightsteelblue;
+    background-color: D5B895;
     padding: 20px 0 0 0;
     height: 60px;
 }
@@ -33,7 +36,7 @@ section {
 
 #dogSection {
     width: 100%; 
-    background-color: lightblue;
+    background-color: C19770;
     height: fit-content;
 }
 
@@ -45,18 +48,18 @@ section {
 
 #videoSection {
     width: 100%; 
-    background-color: lightskyblue;
+    background-color: C19770;
 }
 
 #favoritesSection {
     width: 100%; 
-    background-color: mediumaquamarine;
+    background-color: F7E7CE;
     height: fit-content;
 }
 footer {
     text-align: center;
     width: 100%; 
-    background-color: lightslategray;
+    background-color: F7E7CE;
     height: 80px;
 }
 
@@ -71,7 +74,7 @@ footer h4 {
 
 #favoritesSection {
     width: 100%; 
-    background-color: mediumaquamarine;
+    background-color: D5B895;
     height: fit-content;
 }
 #dogFaves img{ 
