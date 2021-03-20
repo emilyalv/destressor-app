@@ -42,8 +42,29 @@ function createDogPic(images) {
     currentPic = getDogPic;   
 }
 
+//click button, runs function to save to local storage
 saveDogBtn.addEventListener("click", dogFav);
 
+//saves to local storage
 function dogFav(e) {
     localStorage.setItem("favoriteDogs", JSON.stringify(currentPic));
 }
+
+function getFavorites () {
+    var savedDog = localStorage.getItem("favoriteDogs");
+    console.log(savedDog);
+    document.getElementById('dogFaves').innerHTML = `<img src=${savedDog}></img>`;
+}
+
+//checks to see if user has saved a dog to local storage
+//only runs getFavorites if they have saved previously
+function storageCheck() {
+    if (localStorage.getItem("favoriteDogs") == null) {
+        console.log("nothing saved");
+        return;
+    } else {(localStorage.getItem("favoriteDogs") != null) 
+        getFavorites();
+    }
+}
+
+storageCheck();
