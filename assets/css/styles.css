@@ -6,6 +6,9 @@ h4 {
     font-weight: lighter;
 }
 
+label {
+    font-size: 14px;
+}
 
 header {
     text-align: center;
@@ -72,8 +75,8 @@ footer h4 {
     height: fit-content;
 }
 #dogFaves img{ 
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 150px;
+    max-width: 150px;
     height: fit-content; 
 }
 

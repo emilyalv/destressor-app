@@ -45,9 +45,10 @@ function createDogPic(images) {
 //click button, runs function to save to local storage
 saveDogBtn.addEventListener("click", dogFav);
 
-//saves to local storage
+//saves to local storage & adds to favorites
 function dogFav(e) {
     localStorage.setItem("favoriteDogs", JSON.stringify(currentPic));
+    document.getElementById('dogFaves').innerHTML = `<img src=${currentPic}></img>`;
 }
 
 function getFavorites () {

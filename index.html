@@ -16,6 +16,7 @@
     <section id="dogSection">
       <h2>dogs.</h2>    
       <!--dog API divs-->
+      <label for="topics">Find your favorite breed in the dropdown:</label>
       <div id="breed"></div>
         <button id="dogSaveBtn" class="hidden">Save Dog to Favorites</button>
       <div class="dogPicArea" id="dogPic"></div>     
@@ -24,7 +25,7 @@
       <h2>watch.</h2>
        <!--video API menu-->
        <form>
-        <label for="topics">Choose a Video Type</label>
+        <label for="topics">Choose a topic & click Search. To move on to the next one, click Search again.</label><br/>
         <select name="topics" id="topics">
           <option value="meditation">Meditation</option>
           <option value="guided-breathing">Guided Breathing</option>
@@ -32,7 +33,7 @@
           <option value="puppies">Puppies</option>
           <option value="ocean-sounds">Ocean Sounds</option>
         </select>
-        <input type="submit" value="submit"> 
+        <input type="submit" value="Search"> 
       </form> 
       <!--youtube API video containers-->
       <div>
@@ -45,8 +46,10 @@
     </section>
     <section id="favoritesSection">
       <h2>my favorites.</h2>
+      <button id="clearFavesBtn">Clear Favorites</button>
         <div id="dogFaves"></div>
         <div id="videoFaves"></iframe></div>
+        
       </section>
     </section>
   </main>
