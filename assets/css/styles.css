@@ -60,8 +60,20 @@ footer {
 footer h4 {
     padding-top: 20px;
 }
+
 /* styling for Dog API section*/
 .hidden {
     display:none;
+}
+
+#favoritesSection {
+    width: 100%; 
+    background-color: mediumaquamarine;
+    height: fit-content;
+}
+#dogFaves img{ 
+    max-height: 100px;
+    max-width: 100px;
+    height: fit-content; 
 }
 
