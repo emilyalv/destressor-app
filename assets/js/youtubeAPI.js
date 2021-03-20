@@ -1,44 +1,43 @@
 $(document).ready(function(){
     var saveVidBtn = $('#vidSaveBtn');
     var currentVid = '';
+    var clearFavoritesBtn = $('#clearFavesBtn');
 
+    //When user selects a video topic 
     $("form").submit(function(event){
         event.preventDefault();
         let search = $('#topics option:selected').text();
         //console.log(search)
         videoSearch(search);
     })
-
+    //Get video of selected topic
     function videoSearch(search) {
         saveVidBtn.show()
         $("#videos").empty();
         
-        $.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyA-A85JoLyq11NziNGjOlWcwOJ-1wxSf8o&type=video&part=snippet&maxResults=1&q="+search,function(data){
-            //console.log(data)
-            //console.log(search)
-
-            data.items.forEach(item => {
-                let video = `<iframe width="280" height="210" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>`
-                $("#videos").append(video)
-                currentVid = item.id.videoId
-                //console.log(item.id.videoId)
-                //console.log(currentVid)
-                
-                
-            })        
+        $.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyA-A85JoLyq11NziNGjOlWcwOJ-1wxSf8o&type=video&part=snippet&maxResults=10&q="+search,function(data){
+            console.log(data);
+            let videosArr = data.items
+            //show random video from array of 10 results
+            let videoShown = videosArr[Math.floor(Math.random() * videosArr.length)];
+            // console.log(videoShown);
+            // console.log(videoShown.id.videoId);
+            let video = `<iframe width="280" height="210" src="https://www.youtube.com/embed/${videoShown.id.videoId}" frameborder="0" allowfullscreen></iframe>`
+                $("#videos").append(video);
+                currentVid = videoShown.id.videoId;     
         })
     }
 
     //click button, runs function to save to local storage
     vidSaveBtn.addEventListener("click", vidFav);
 
-    //function to save video to local storage
+    //function to save video to local storage & add to favorites
     function vidFav(e) {
         console.log(currentVid);
         localStorage.setItem("favoriteVideo", JSON.stringify(currentVid));
-    }
+        document.getElementById('videoFaves').innerHTML = `<iframe width="280" height="210" src="https://www.youtube.com/embed/${currentVid}" frameborder="0" allowfullscreen></iframe>`;
 
-    //new-----------------------------
+    }
 
     function getVidFavorites (e) {
         var savedVid = localStorage.getItem("favoriteVideo");
@@ -61,5 +60,12 @@ $(document).ready(function(){
     
     vidStorageCheck();
 
+    //clear local storage & clear favorites section if clear button is clicked
+    clearFavoritesBtn.click(function() {
+        localStorage.clear();
+        $('#dogFaves').remove();
+        $('#videoFaves').remove();
+    })
+        
 
 })
